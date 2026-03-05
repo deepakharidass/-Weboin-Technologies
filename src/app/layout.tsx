@@ -1,0 +1,28 @@
+import { Navbar } from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Weboin Creative Agency",
+  description:
+    "Weboin Creative Agency crafts modern brands, product experiences, and high-converting websites for growing businesses.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-slate-950 text-slate-50">
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+
